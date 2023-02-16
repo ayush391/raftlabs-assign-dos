@@ -14,6 +14,7 @@ const AddPerson = () => {
                 maxWidth='md'
                 sx={{
                     marginTop: '2rem',
+                    marginBottom: '2rem',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: 2,

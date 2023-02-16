@@ -29,10 +29,7 @@ export const AppState = ({ children }) => {
     }
 
     const removePerson = (person) => {
-        if (person in people) {
-            const newPeople = people.filter((p) => p !== person)
-            setPeople(newPeople)
-        }
+        setPeople(people => people.filter((p) => p !== person))
     }
     return (
         <AppContext.Provider value={{

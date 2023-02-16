@@ -1,43 +1,35 @@
 import { BigHead } from '@bigheads/core'
 import { DeleteOutline } from '@mui/icons-material'
 import { Box, Button, IconButton, Paper, Typography } from '@mui/material'
-import React from 'react'
+import React, { useContext } from 'react'
+import { AppContext } from '../../context/appContext'
 
-const PersonListItem = React.memo(({ children }) => {
+const PersonListItem = React.memo(({ person }) => {
+
     return (
-        <Box>
-
-            <Paper
-                elevation={2}
+        <Paper
+            elevation={2}
+            sx={{
+                padding: '0.5rem 2rem',
+                display: 'flex',
+                flexDirection: 'column',
+                placeItems: 'center',
+                // width: '100px',
+                overflow: 'hidden',
+            }}
+        >
+            <Box
                 sx={{
-                    padding: '0.5rem 2rem',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    placeItems: 'center',
-                    width: '100px',
-                    overflow: 'hidden',
+                    minWidth: '100px',
+                    width: '5em'
                 }}
             >
-                <Box
-                    sx={{
-                        width: '50px'
-                    }}
-                >
-                    <BigHead />
-                </Box>
-                <Typography variant='caption'>
-                    {children}
-                </Typography>
-            </Paper>
-
-            <Button size='small' color='error' variant='contained'
-                sx={{
-                    width: '100%',
-                }}>
-                <DeleteOutline fontSize='small' />
-            </Button>
-
-        </Box>
+                <BigHead />
+            </Box>
+            <Typography variant='caption'>
+                {person}
+            </Typography>
+        </Paper>
     )
 })
 

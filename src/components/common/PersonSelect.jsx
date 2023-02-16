@@ -1,40 +1,45 @@
 import React, { useContext, useState } from 'react'
-import { Box, Button, Paper, TextField, Typography } from '@mui/material'
+import { Box, Button, FormControl, InputLabel, MenuItem, Paper, Select, TextField, Typography } from '@mui/material'
 import { AppContext } from '../../context/appContext'
 
-const PersonSelect = () => {
+const PersonSelect = ({ person, handlePerson }) => {
     const context = useContext(AppContext)
     const { people, addPerson } = context
 
-    const [person, setPerson] = useState('')
+    // const [selectedperson, setSelectedPerson] = useState('')
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        addPerson(person)
-        setPerson('')
-    }
+
     const handleChange = (e) => {
-        setPerson(e.target.value)
+        handlePerson(e.target.value)
     }
 
     return (
-        <Box component='form'
-            onSubmit={handleSubmit}
+        <Box
             sx={{
                 display: 'flex',
-                flexDirection: 'column',
                 gap: 2,
-                placeItems: 'center',
-                flex: 1
+                width: '100%'
+
             }}
         >
-            <TextField
-                variant='outlined'
-                label='Add Person'
-                value={person}
-                onChange={handleChange}
-            />
-            <Button type='submit' size='large' variant='contained'>Add</Button>
+            <FormControl fullWidth>
+                <InputLabel id="demo-simple-select-label">Person</InputLabel>
+                <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={person}
+                    label="Person"
+                    onChange={handleChange}
+                >
+                    {
+                        people.map((p) => {
+                            return (
+                                <MenuItem key={p} value={p}>{p}</MenuItem>
+                            )
+                        })
+                    }
+                </Select>
+            </FormControl>
         </Box>
     )
 }
