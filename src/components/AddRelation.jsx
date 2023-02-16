@@ -1,16 +1,21 @@
 import { Container } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import PersonSelect from './common/PersonSelect'
-import { Box, Button, FormControl, InputLabel, MenuItem, Paper, Select, TextField, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 import PersonListItem from './common/PersonListItem'
 import { HandshakeRounded } from '@mui/icons-material'
+import { AppContext } from '../context/appContext'
 
 const AddRelation = () => {
+    const context = useContext(AppContext)
+    const { relations, addRelation } = context
     const [person1, setPerson1] = useState('')
     const [person2, setPerson2] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        addRelation(person1, person2)
+        console.log(relations)
         // addPerson(person)
         // setPerson('')
     }
@@ -38,18 +43,6 @@ const AddRelation = () => {
                     sx={{
                         display: 'flex',
                         gap: 2,
-                        width: '100%',
-                        placeItems: 'center'
-                    }}
-                >
-                    <PersonSelect person={person1} handlePerson={handlePerson1} />
-                    <PersonSelect person={person2} handlePerson={handlePerson2} />
-                </Box>
-
-                <Box
-                    sx={{
-                        display: 'flex',
-                        gap: 2,
                         placeItems: 'center',
 
                     }}
@@ -58,6 +51,19 @@ const AddRelation = () => {
                     <HandshakeRounded fontSize='large' sx={{ color: 'darkgoldenrod' }} />
                     <PersonListItem person={person2} />
                 </Box>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        gap: 2,
+                        width: '100%',
+                        placeItems: 'center'
+                    }}
+                >
+                    <PersonSelect person={person1} handlePerson={handlePerson1} />
+                    <PersonSelect person={person2} handlePerson={handlePerson2} />
+                </Box>
+
+
 
                 <Button type='submit' size='large' variant='contained'>Set</Button>
             </Container>

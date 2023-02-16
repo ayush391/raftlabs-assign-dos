@@ -1,11 +1,10 @@
 import { BigHead } from '@bigheads/core'
-import { DeleteOutline } from '@mui/icons-material'
-import { Box, Button, IconButton, Paper, Typography } from '@mui/material'
-import React, { useContext } from 'react'
-import { AppContext } from '../../context/appContext'
+import { Box, Paper, Typography } from '@mui/material'
+import React, { useCallback, useMemo, useRef } from 'react'
 
-const PersonListItem = React.memo(({ person }) => {
+const PersonListItem = ({ person }) => {
 
+    const avatarRef = useRef(<BigHead />)
     return (
         <Paper
             elevation={2}
@@ -14,7 +13,6 @@ const PersonListItem = React.memo(({ person }) => {
                 display: 'flex',
                 flexDirection: 'column',
                 placeItems: 'center',
-                // width: '100px',
                 overflow: 'hidden',
             }}
         >
@@ -24,13 +22,19 @@ const PersonListItem = React.memo(({ person }) => {
                     width: '5em'
                 }}
             >
-                <BigHead />
+                {
+                    person ?
+                        // <BigHead />
+                        avatarRef.current
+                        :
+                        <Typography variant='caption'>Select a person</Typography>
+                }
             </Box>
             <Typography variant='caption'>
                 {person}
             </Typography>
-        </Paper>
+        </Paper >
     )
-})
+}
 
 export default PersonListItem

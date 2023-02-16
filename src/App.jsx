@@ -4,7 +4,6 @@ import './App.css'
 import AddPerson from './components/AddPerson'
 import AddRelation from './components/AddRelation'
 import FindDOS from './components/FindDOS'
-import { AppContext } from './context/appContext'
 import { AppState } from './context/appState'
 import { appTheme } from './theme'
 

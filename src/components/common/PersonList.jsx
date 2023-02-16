@@ -1,5 +1,5 @@
 import { DeleteOutline } from '@mui/icons-material'
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button } from '@mui/material'
 import React, { useContext } from 'react'
 import { AppContext } from '../../context/appContext'
 import PersonListItem from './PersonListItem'
@@ -33,8 +33,8 @@ const PersonList = () => {
                 {
                     people.map((p) => {
                         return (
-                            <Box>
-                                <PersonListItem key={p} person={p} />
+                            <Box key={p}>
+                                <PersonListItem person={p} />
                                 <Button
                                     onClick={() => handleRemove(p)}
                                     size='small' color='error' variant='contained'
