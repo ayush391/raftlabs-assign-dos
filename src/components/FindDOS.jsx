@@ -64,29 +64,30 @@ const FindDOS = () => {
                     </Box>
                     <Button color='warning' onClick={handleSubmit} variant='contained'>Degrees of Seperation</Button>
 
-                </Container>
-                {
-                    dosResult.map((relation, idx) => {
+                    {
+                        dosResult.map((relation, idx) => {
 
-                        return relation && relation.length > 1 ?
-                            <Box
-                                key={idx}
-                                sx={{
-                                    display: 'flex',
-                                    placeItems: 'center',
-                                    marginTop: '1rem',
-                                    marginBottom: '1rem',
-                                }}
-                            >
-                                <Typography fontWeight='bold' marginRight={2}>{idx + 1}.</Typography>
-                                <RelationList
-                                    relations={relation}
-                                />
-                            </Box>
-                            :
-                            <Typography key={1} variant='h5'>No valid relation detected</Typography>
-                    })
-                }
+                            return relation && relation.length > 1 ?
+                                <Box
+                                    key={idx}
+                                    sx={{
+                                        display: 'flex',
+                                        placeItems: 'center',
+                                        marginTop: '1rem',
+                                        marginBottom: '1rem',
+                                    }}
+                                >
+                                    <Typography fontWeight='bold' marginRight={2}>{idx + 1}.</Typography>
+                                    <RelationList
+                                        relations={relation}
+                                    />
+                                </Box>
+                                :
+                                <Typography key={1} variant='h5'>No valid relation detected</Typography>
+                        })
+                    }
+                </Container>
+
             </Box>
 
         </section>
