@@ -20,16 +20,5 @@ export const calcDos = (graph, startPerson, endPerson) => {
 
     return paths;
 }
-// export const calcDos = (graph, start, end, visited = new Set) => {
-//     if (start === end) return [...visited, end];
-//     visited.add(start)
 
-//     for (let neighbour of graph.get(start)) {
-//         if (!visited.has(neighbour)) {
-//             console.log(visited)
-//             return calcDos(graph, neighbour, end, visited)
-//         }
-//     }
-//     visited.delete(start)
-// }
 

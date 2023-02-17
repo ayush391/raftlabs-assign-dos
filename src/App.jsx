@@ -14,13 +14,15 @@ function App() {
   let theme = createTheme(appTheme)
   theme = responsiveFontSizes(theme)
 
-  const scrollRef = useRef(null)
-  useScrollSnap({ ref: scrollRef, duration: 50, delay: 10 })
+  // const scrollRef = useRef(null)
+  // useScrollSnap({ ref: scrollRef, duration: 50, delay: 10 })
 
   return (
     <AppState>
       <ThemeProvider theme={theme}>
-        <div ref={scrollRef}>
+        <div
+        // ref={scrollRef}
+        >
           <CssBaseline />
           <AddPerson />
           <AddRelation />

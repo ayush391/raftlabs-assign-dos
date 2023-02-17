@@ -18,8 +18,8 @@ const PersonListItem = ({ person }) => {
         >
             <Box
                 sx={{
-                    minWidth: '50px',
-                    width: '5rem'
+                    minWidth: '100px',
+                    width: '10vw'
                 }}
             >
                 {
