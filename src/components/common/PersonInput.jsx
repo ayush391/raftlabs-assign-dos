@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Box, Button, Paper, TextField, Typography } from '@mui/material'
+import { Box, Button, TextField } from '@mui/material'
 import { AppContext } from '../../context/appContext'
 
 const PersonInput = () => {
@@ -34,7 +34,7 @@ const PersonInput = () => {
                 value={person}
                 onChange={handleChange}
             />
-            <Button type='submit' size='large' variant='contained'>Add</Button>
+            <Button color='success' type='submit' size='large' variant='contained'>Add</Button>
         </Box>
     )
 }

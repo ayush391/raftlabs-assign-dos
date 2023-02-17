@@ -27,47 +27,63 @@ const AddRelation = () => {
         setPerson2(val)
     }
     return (
-        <>
-            <Typography variant='h3' textAlign='center' gutterBottom>Add Relation</Typography>
-            <Container component='form'
-                maxWidth='md'
-                onSubmit={handleSubmit}
+        <section
+            style={{
+                backgroundColor: '#85c5e520'
+            }}
+        >
+            <Box
+                height='100%'
                 sx={{
                     display: 'flex',
-                    flexDirection: 'column',
-                    gap: 2,
-                    placeItems: 'center',
+                    placeItems: 'center'
                 }}
             >
-                <Box
+
+                {/* <Typography variant='h3' textAlign='center' gutterBottom>Add Relation</Typography> */}
+                <Container component='form'
+                    maxWidth='md'
+                    onSubmit={handleSubmit}
                     sx={{
                         display: 'flex',
+                        flexDirection: 'column',
                         gap: 2,
                         placeItems: 'center',
-
                     }}
                 >
-                    <PersonListItem person={person1} />
-                    <HandshakeRounded fontSize='large' sx={{ color: 'darkgoldenrod' }} />
-                    <PersonListItem person={person2} />
-                </Box>
-                <Box
-                    sx={{
-                        display: 'flex',
-                        gap: 2,
-                        width: '100%',
-                        placeItems: 'center'
-                    }}
-                >
-                    <PersonSelect person={person1} handlePerson={handlePerson1} />
-                    <PersonSelect person={person2} handlePerson={handlePerson2} />
-                </Box>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            gap: 2,
+                            placeItems: 'center',
+                            // width: '100%',
+                            // marginRight: 'auto',
+                            flex: 1
+                        }}
+                    >
+                        <PersonListItem person={person1} />
+                        <Typography variant='h2'>🫱🫲</Typography>
+                        <PersonListItem person={person2} />
+                    </Box>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            gap: 2,
+                            width: '100%',
+                            placeItems: 'center'
+                        }}
+                    >
+                        <PersonSelect person={person1} handlePerson={handlePerson1} />
+                        <PersonSelect person={person2} handlePerson={handlePerson2} />
+                    </Box>
 
 
 
-                <Button type='submit' size='large' variant='contained'>Set</Button>
-            </Container>
-        </>
+                    <Button color='primary' type='submit' size='large' variant='contained'>Set Relation</Button>
+                </Container>
+            </Box>
+
+        </section>
     )
 }
 

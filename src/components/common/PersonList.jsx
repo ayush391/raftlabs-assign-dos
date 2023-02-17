@@ -14,7 +14,7 @@ const PersonList = () => {
         <Box
             sx={{
                 padding: '0rem 1rem 1rem 1rem',
-                height: '300px',
+                height: '400px',
                 // width: '550px',
                 overflowY: 'scroll',
                 overflowX: 'hidden',

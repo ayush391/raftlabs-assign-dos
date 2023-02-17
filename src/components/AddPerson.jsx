@@ -8,25 +8,39 @@ import PersonListItem from './common/PersonListItem'
 const AddPerson = () => {
 
     return (
-        <>
-            <Typography variant='h3' textAlign='center' gutterBottom>Add People</Typography>
-            <Container
-                maxWidth='md'
+        <section
+            style={{
+                backgroundColor: '#80808020'
+            }}
+        >
+            <Box
+                height='100%'
                 sx={{
-                    marginTop: '2rem',
-                    marginBottom: '2rem',
                     display: 'flex',
-                    flexDirection: 'column',
-                    gap: 2,
-                    justifyContent: 'start',
-                    alignItems: 'center'
-
+                    placeItems: 'center'
                 }}
             >
-                <PersonList />
-                <PersonInput />
-            </Container >
-        </>
+
+                {/* <Typography variant='h3' textAlign='center' gutterBottom>Add People</Typography> */}
+                <Container
+                    maxWidth='md'
+                    sx={{
+                        // marginTop: '2rem',
+                        // marginBottom: '2rem',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: 2,
+                        justifyContent: 'start',
+                        alignItems: 'center',
+
+                    }}
+                >
+                    <PersonList />
+                    <PersonInput />
+                </Container >
+
+            </Box>
+        </section>
     )
 }
 
